@@ -1,0 +1,7 @@
+Week12 Git Assignment
+Name: 이상민
+
+Assignment
+1. Jobkorea Crawling
+2. Saramin Crawling
+3. Streamlit Dashboard
