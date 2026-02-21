@@ -2,8 +2,8 @@ import streamlit as st
 import pandas as pd
 import matplotlib.pyplot as plt
 
-jobkorea_df = pd.read_csv("data_jobkorea.csv")
-saramin_df = pd.read_csv("data_saramin.csv")
+jobkorea_df = pd.read_csv("C:/Users/sm111/Desktop/bootcamp_github_hw_week12/data_tmp/data_jobkorea.csv")
+saramin_df = pd.read_csv("C:/Users/sm111/Desktop/bootcamp_github_hw_week12/data_tmp/data_saramin.csv")
 
 df = pd.concat([jobkorea_df, saramin_df], ignore_index=True)
 
