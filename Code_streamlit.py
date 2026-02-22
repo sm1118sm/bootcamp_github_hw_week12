@@ -13,7 +13,7 @@ if st.button("Recruit Searching"):
 
     st.dataframe(df, use_container_width=True)
 
-    count_df = df["Site"].value_counts().reset_index()
+    count_df = df["Site"].value_counts(ascending=True).reset_index()
     count_df.columns = ["Site", "Count"]
     count_df["Ratio"] = round(count_df["Count"] / count_df["Count"].sum() * 100, 2)
 
@@ -26,7 +26,7 @@ if st.button("Recruit Searching"):
     wedges, texts, autotexts = ax.pie(
         count_df["Ratio"],
         autopct="%.1f%%",
-        startangle=222
+        startangle=90
     )
 
     ax.legend(
