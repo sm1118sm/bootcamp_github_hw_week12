@@ -1,6 +1,6 @@
 import streamlit as st
 import pandas as pd
-import matplotlib.pyplot as plt
+import plotly.express as px
 
 jobkorea_df = pd.read_csv("C:/Users/sm111/Desktop/bootcamp_github_hw_week12/data_tmp/data_jobkorea.csv")
 saramin_df = pd.read_csv("C:/Users/sm111/Desktop/bootcamp_github_hw_week12/data_tmp/data_saramin.csv")
@@ -19,22 +19,11 @@ if st.button("Recruit Searching"):
 
     st.dataframe(count_df, use_container_width=False)
 
-    st.subheader("Recruitment Ratio")
-
-    fig, ax = plt.subplots(figsize=(6, 4))
-
-    wedges, texts, autotexts = ax.pie(
-        count_df["Ratio"],
-        autopct="%.1f%%",
-        startangle=90
+    fig = px.pie(
+        count_df,
+        names="Site",
+        values="Count",
+        title="Recruitment Ratio"
     )
 
-    ax.legend(
-        wedges,
-        count_df["Site"],
-        loc="center left",
-        bbox_to_anchor=(1.02, 0.5)
-    )
-
-    ax.axis("equal")
-    st.pyplot(fig, use_container_width=False)
+    st.plotly_chart(fig, use_container_width=True)
